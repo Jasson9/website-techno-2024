@@ -201,7 +201,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to top, rgba(1, 22, 55, 1), rgba(1, 22, 55, 0));
+  background: linear-gradient(to top, rgba(1, 22, 55, 1) 5%, rgba(1, 22, 55, 0) 100%);
   z-index: 0;
 }
 
@@ -251,13 +251,18 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(1, 22, 55, 1), rgba(1, 22, 55, 0));
+  background: linear-gradient(to bottom, rgba(1, 22, 55, 0.8), rgba(1, 22, 55, 0));
   z-index: -1;
   pointer-events: none;
 }
 
 .background-container {
   position: relative;
+  z-index: -2;
+}
+
+.content-container {
+  z-index: 100;
 }
 
 .about {
@@ -266,6 +271,7 @@ nav {
   text-align: center;
   display: flex;
   justify-content: center;
+  z-index: 100;
 }
 
 .about-content {
@@ -343,12 +349,18 @@ nav {
   padding: 3rem 0;
   color: white;
   text-align: center;
+  z-index: 100;
 }
 
 .benefits h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   font-family: 'Atlantis', sans-serif;
   font-size: 3rem;
+}
+
+.benefits h2 {
+  font-family: 'Atlantis', sans-serif;
+  font-size: 2.25rem;
 }
 
 .benefits-container {
@@ -399,10 +411,11 @@ nav {
 .faq {
   padding: 3rem;
   color: white;
+  z-index: 100;
 }
 
 .faq h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   text-align: center;
   font-family: 'Atlantis', sans-serif;
   font-size: 3rem;
@@ -625,6 +638,7 @@ nav {
 @media (max-width: 1200px) {
   .faq-container {
     flex-direction: column;
+    align-items: center;
   }
 
   .faq-category {
@@ -679,6 +693,7 @@ nav {
 
   .faq-container {
     flex-direction: column;
+    align-items: center;
   }
 
   .faq-category {
