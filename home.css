@@ -33,144 +33,6 @@ h2 {
   box-sizing: border-box;
 }
 
-/* Custom scrollbar for Webkit browsers (Chrome, Safari, etc.) */
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #95f3fd;
-  border-radius: 10px;
-  border: 3px solid transparent;
-  background-clip: content-box;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #0a1847;
-  border-radius: 10px;
-}
-
-/* Custom scrollbar for Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #95f3fd #0a1847;
-}
-
-/* Custom scrollbar for IE/Edge (fall back) */
-body {
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-body::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #95f3fd;
-  border-radius: 10px;
-  border: 3px solid transparent;
-  background-clip: content-box;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: #0a1847;
-  border-radius: 10px;
-}
-
-
-header {
-  background-color: #0a1847;
-  padding: 0.75rem;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 3.75rem;
-  flex-grow: 1;
-  justify-content: center;
-}
-
-.logo img,
-.placeholder {
-  width: 8rem;
-}
-
-.nav-links li {
-  display: inline;
-  display: flex;
-  justify-content: center;
-}
-
-.nav-links a {
-  color: white;
-}
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 40px;
-  height: 30px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.menu-toggle span {
-  width: 100%;
-  height: 3px;
-  background: white;
-  border-radius: 2px;
-}
-
-@media (max-width: 480px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    left: 0;
-    background-color: #0a1847;
-    width: 100%;
-    padding: 1rem;
-    padding-bottom: 2rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .menu-toggle span {
-    background: white;
-  }
-
-  .nav-links.active+main {
-    margin-top: 200px;
-  }
-
-  main.active {
-    margin-top: 200px;
-    transition: margin-top 0.5s ease;
-  }
-}
-
 .landing {
   background-color: #011637;
   position: relative;
@@ -201,7 +63,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to top, rgba(1, 22, 55, 1) 5%, rgba(1, 22, 55, 0) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 5%, rgba(0, 0, 0, 0) 100%);
   z-index: 0;
 }
 
@@ -211,7 +73,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(1, 22, 55, 0.5), rgba(1, 22, 55, 0));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 1%, rgba(0, 0, 0, 0));
   z-index: 0;
 }
 
@@ -251,7 +113,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(1, 22, 55, 0.8) 0.8%, rgba(1, 22, 55, 0));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0.8%, rgba(0, 0, 0, 0));
   z-index: 0;
   pointer-events: none;
 }
@@ -606,40 +468,6 @@ nav {
   text-align: center;
 }
 
-.footer {
-  background-color: #243b67;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-  color: white;
-  text-align: center;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-logos {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-logos img {
-  width: auto;
-  height: 8rem;
-  object-fit: contain;
-}
-
-.footer p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-}
-
 @media (max-width: 1200px) {
   .faq-container {
     flex-direction: column;
@@ -713,18 +541,6 @@ nav {
   .contact-info p {
     font-size: 0.9rem;
   }
-
-  .footer-logo {
-    width: 12rem;
-  }
-
-  .footer-logos img {
-    width: 6rem;
-  }
-
-  .footer p {
-    font-size: 0.9rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -756,25 +572,9 @@ nav {
   .contact-info p {
     font-size: 0.8rem;
   }
-
-  .footer-logo {
-    width: 10rem;
-  }
-
-  .footer-logos {
-    gap: 1rem;
-  }
-
-  .footer-logos img {
-    width: 5rem;
-  }
-
-  .footer p {
-    font-size: 0.8rem;
-  }
 }
 
-/* buat sponsor */
+/* buat background */
 @media (max-width: 768px) {
   .background-container {
     background-image: url('assets/Background-tab.png');
@@ -785,8 +585,6 @@ nav {
   .background-container {
     background-image: url('assets/Background-phone.png');
   }
-
-  .sponsors {
-    padding: 24rem 0;
-  }
 }
+
+/* Buat sponsor */
