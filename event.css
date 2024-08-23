@@ -314,7 +314,7 @@ a {
   padding-right: 2rem;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  margin-bottom: 22rem;
+  margin-bottom: 25rem;
   z-index: 1;
   background: rgba(0, 0, 0, 0.3);
 
@@ -355,41 +355,88 @@ a {
 
 .expo-card-wrap {
   display: flex;
-  position: relative;
   flex-direction: row;
   align-items: center;
+  align-content: center;
+  justify-content: center;
   gap: 3rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  background-color: red;
 }
 
 .expo-card-cont {
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   flex-direction: row;
   gap: 3rem;
   align-items: center;
-  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
   overflow: hidden;
+  padding-bottom: 23.7rem;
 }
 
-.expo-card-left,
-.expo-card-right {
+#card-1,
+#card-3 {
   width: 23.6rem;
   height: 24.4rem;
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("./assets/dummy-image.jpg");
-}
-
-.expo-card-middle {
-  width: 30.3rem;
-  height: 40.6rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("./assets/dummy-image.jpg");
-}
-
-.expo-card {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: all 1s ease-in-out;
+}
+
+#card-4,
+#card-5,
+#card-6,
+#card-7 {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("./assets/dummy-image.jpg");
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin-left: -3rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 1s ease-in-out;
+}
+
+.expo-card-place-desc-hidden {
+  width: 0;
+  height: 0;
+}
+
+#card-2 {
+  width: 30.3rem;
+  height: 40.6rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("./assets/dummy-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 1s ease-in-out;
+}
+
+#card-desc-1,
+#card-desc-2,
+#card-desc-3 {
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease-in-out;
+}
+
+#card-desc-4,
+#card-desc-5,
+#card-desc-6,
+#card-desc-7 {
+  width: 0;
+  height: 0;
+  transition: all 1s ease-in-out;
+}
+
+.expo-card {
+
   border-radius: 20px;
 }
 
@@ -402,6 +449,7 @@ a {
   border-radius: 50%;
   width: 4rem;
   height: 4rem;
+  z-index: 10;
 }
 
 .expo-button-left img,
@@ -415,8 +463,6 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 100%;
-  height: 100%;
   padding-left: 1rem;
   padding-bottom: 1rem;
 }

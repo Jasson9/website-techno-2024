@@ -186,12 +186,16 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .footer-logo {
-    width: 12rem;
+  .footer-logos .logo-binus {
+    height: 5rem;
   }
 
-  .footer-logos img {
-    width: 6rem;
+  .footer-logos .logo-himti {
+    height: 6rem;
+  }
+
+  .footer-logos .logo-techno {
+    height: 7rem;
   }
 
   .footer p {
@@ -200,19 +204,23 @@ nav {
 }
 
 @media (max-width: 480px) {
-  .footer-logo {
-    width: 10rem;
-  }
-
   .footer-logos {
     gap: 1rem;
   }
 
-  .footer-logos img {
-    width: 5rem;
+  .footer-logos .logo-binus {
+    height: 2.5rem;
+  }
+
+  .footer-logos .logo-himti {
+    height: 3.5rem;
+  }
+
+  .footer-logos .logo-techno {
+    height: 4.5rem;
   }
 
   .footer p {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 }

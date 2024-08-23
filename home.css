@@ -113,13 +113,21 @@ h2 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0.8%, rgba(0, 0, 0, 0));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0.5%, rgba(0, 0, 0, 0));
   z-index: 0;
   pointer-events: none;
 }
 
 .background-container {
   position: relative;
+  background-image: url('assets/Background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  color: #020F25;
+  text-align: center;
+  z-index: 10;
 }
 
 .content-container {
@@ -416,56 +424,11 @@ h2 {
   margin: 0;
 }
 
-.sponsors {
-  padding: 48rem 0;
-}
 
-.sponsors-content {
-  width: 40%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.sponsor-items {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 2rem;
-}
-
-.supported-by {
-  display: flex;
-  justify-content: center;
-  margin-top: 3rem;
-}
-
-.contact-info p {
-  margin: 0.5rem 0;
-}
-
-.contact-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-}
-
-.contact-image {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-}
-
-.background-container {
-  background-image: url('assets/Background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  object-fit: contain;
-  color: white;
-  text-align: center;
+.footer {
+  position: relative;
+  margin-top: -2.4rem;
+  z-index: 1000;
 }
 
 @media (max-width: 1200px) {
@@ -505,13 +468,31 @@ h2 {
 }
 
 @media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center content horizontally */
+  }
+
   .about-content img {
-    display: none;
+    width: 100%; 
+    height: auto;
+    border-radius: 10px 10px 0 0 ; 
+    margin-bottom: 2rem; 
   }
 
   .about-text {
-    width: 100%;
-    padding: 2rem;
+    padding: 0 0 50px 0;
+    width: 80%;
+  }
+
+  .about-text h2 {
+    font-size: 13vw;
+    margin-bottom: 1rem;
+  }
+
+  .about-text p {
+    padding: 0;
+    font-size: 3vw;
   }
 
   .benefits-container {
@@ -550,7 +531,14 @@ h2 {
 
   .about-text {
     width: 100%;
-    padding: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: 13vw;
+  }
+
+  .about-text p {
+    padding: 0;
   }
 
   .benefit-card {
@@ -588,3 +576,142 @@ h2 {
 }
 
 /* Buat sponsor */
+.sponsors {
+  position: relative;
+  padding: 2rem 0 0 0;
+  margin-top: 3rem;
+}
+
+.sponsors .background {
+  width: 100vw;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.sponsors-content {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 2;
+  text-align: center;
+}
+
+.sponsor-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.sponsor-items h1 {
+  text-align: center;
+  font-family: 'Atlantis', sans-serif;
+  color: white;
+  font-size: 3.5vw;
+  margin-bottom: 2vw;
+}
+
+.sponsor-list, .dewaweb {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%; 
+}
+
+.dewaweb {
+  transition: transform 0.3s ease;
+}
+
+.dewaweb:hover {
+  transform: translateY(-10px);
+}
+
+.social-media-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: white;
+}
+
+.social-media-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.social-media-item i {
+  font-size: 2vw;
+}
+
+.social-media-item span {
+  font-size: 1.5vw;
+}
+
+.social-media-item:hover {
+  transform: translateY(-5px);
+}
+
+
+@media (max-width: 1200px) {
+  .sponsors-content {
+    width: 60%;
+  }
+
+  .sponsor-items {
+    margin-top: 5rem;
+  }
+
+  .sponsor-list, .dewaweb {
+    max-width: 50%;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .sponsor-items {
+    margin-top: 3rem;
+  }
+
+  .sponsor-list, .dewaweb {
+    max-width: 40%;
+  }
+
+  .social-media-links {
+    gap: 0.5rem;
+  }
+
+  .footer {
+    margin-top: -0.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsors-content {
+    width: 80%;
+    top: 45%;
+  }
+
+  .sponsor-items h1 {
+    font-size: 4.4vw;
+    margin-bottom: 3vw;
+  }
+
+  .sponsor-list, .dewaweb {
+    max-width: 45%;
+  }
+
+  .social-media-item i {
+    font-size: 3vw;
+  }
+
+  .social-media-item span {
+    font-size: 2.5vw;
+  }
+}
