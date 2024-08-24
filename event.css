@@ -110,9 +110,9 @@ a {
 
 .event-pbp-wrap {
   background: rgba(27, 94, 167, 0.78);
-  /* background-color: ; */
   width: 85vw;
-  height: 100%;
+  height: auto;
+  /* Adjust the height to auto so it wraps the content properly */
   border-radius: 20px;
   display: flex;
   flex-direction: row;
@@ -122,12 +122,14 @@ a {
 
 .event-pbp-image {
   width: 40%;
-
+  height: auto;
+  /* Let the height adjust based on content */
 }
 
 .event-pbp-image img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  /* Maintain the image's aspect ratio */
   object-fit: cover;
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
@@ -136,15 +138,11 @@ a {
 .event-pbp-description-wrap {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   text-align: center;
-  /* background-color: red; */
   width: 60%;
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-
+  padding: 3rem 3.5rem;
+  /* Simplify the padding */
+  box-sizing: border-box;
 }
 
 .event-pbp-description-title h2 {
@@ -171,32 +169,109 @@ a {
   padding-bottom: 2rem;
 }
 
-.event-pbp-left-arrow img {
+.event-pbp-left-arrow img,
+.event-pbp-right-arrow img {
   height: 3rem;
   width: 1.6rem;
+  cursor: pointer;
+  /* Ensure the arrows are clickable */
   object-fit: contain;
 }
 
+@keyframes pbpAnimation {
+  0% {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  100% {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes pbpAnimationAfter {
+  0% {
+    position: initial;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    position: initial;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes pbpAnimationBackwards {
+  0% {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  100% {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pbpAnimationBackawrdsAfter {
+  0% {
+    position: initial;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    position: initial;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+
+
 .event-pbp-description-detail-details p {
   font-size: 1.25rem;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .event-pbp-register-button button {
   background-color: white;
-  /* White background */
   width: 20rem;
   height: 4rem;
   font-size: 1.7rem;
   border-radius: 10px;
-  border: 2px solid rgba(0, 0, 0, 0);
-  /* Optional: Add a border to match the gradient */
+  border: 2px solid transparent;
   font-weight: 700;
   cursor: pointer;
   position: relative;
   z-index: 1;
   overflow: hidden;
   color: transparent;
-  /* Make the text transparent */
 }
 
 .event-pbp-register-button button::before {
@@ -219,7 +294,6 @@ a {
 .event-pbp-register-button button:hover {
   background-color: #f0f0f0;
 }
-
 
 
 /* guest star, talkshow, games, side quest */
@@ -314,7 +388,7 @@ a {
   padding-right: 2rem;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  margin-bottom: 25rem;
+  margin-bottom: 26rem;
   z-index: 1;
   background: rgba(0, 0, 0, 0.3);
 
@@ -362,7 +436,9 @@ a {
   gap: 3rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: red;
+  /* background-color: red; */
+
+  padding-bottom: 21rem;
 }
 
 .expo-card-cont {
@@ -374,7 +450,6 @@ a {
   align-content: center;
   justify-content: center;
   overflow: hidden;
-  padding-bottom: 23.7rem;
 }
 
 #card-1,
