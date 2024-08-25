@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>TECHNO 2024</title>
-    <link href="./event.css" rel="stylesheet" type="text/css" />
-    <link href="./navbar-footer.css" rel="stylesheet" type="text/css" />
+    <link href="event.css" rel="stylesheet" type="text/css" />
     <link
       href="https://fonts.googleapis.com/css?family=Poppins"
       rel="stylesheet"
@@ -38,203 +37,166 @@
 
     <!-- Events -->
     <main>
-      <section class="event-section">
-        <div class="events-title">
-          <h1>EVENTS</h1>
-        </div>
-        <div class="event-pbp-wrap">
-          <div class="event-pbp-image">
-            <img src="assets/poster-algorena.png" alt="image pbp" />
-          </div>
-          <!-- TODO: bikin carousel :( -->
-          <div class="event-pbp-description-wrap">
-            <div class="event-pbp-description-title">
-              <h2>
-                PEMBELAJARAN<br />BAHASA<br />
-                PEMROGRAMAN
-              </h2>
+      <div class="background-container">
+        <section class="event-section">
+            <div class="events-title">
+              <h1>EVENTS</h1>
             </div>
-            <div class="event-pbp-description-body">
-              <p>
-                <b>
-                  PBP atau Pengenalan Bahasa Pemrograman adalah benefit yang
-                  didapatkan oleh peserta TECHNO 2023.</b
-                ><br />
-                Pada sesi pembelajaran ini, materi yang diajarkan merupakan
-                materi dasar bahasa pemrograman C dan Python (untuk Region
-                Senayan) yang akan berguna untuk kalian freshmen School of
-                Computer Science yang belum pernah mencoba coding.
-              </p>
-            </div>
-            <div class="event-pbp-description-place" id="event-place">
-              <h2>KEMANGGISAN</h2>
-            </div>
-            <div class="event-pbp-description-detail-wrap">
-              <div class="event-pbp-left-arrow" onclick="prevSlide()">
-                <img src="assets/left-arrow.svg" alt="Previous" />
-              </div>
-              <div class="carousel" id="carousel-content"></div>
-              <div class="event-pbp-right-arrow" onclick="nextSlide()">
-                <img src="assets/right-arrow.svg" alt="Next" />
+            <div class="event-pbp">
+              <img class="algorena" src="assets/poster-algorena.png" alt="image pbp" />
+              <div class="event-pbp-content">
+                <div class="event-pbp-description">
+                    <h2>PEMBELAJARAN BAHASA PEMROGRAMAN</h2>
+                    <p style="font-weight: bold;">PBP atau Pengenalan Bahasa Pemrograman adalah benefit yang didapatkan oleh peserta TECHNO 2023.</p>
+                    <p>Pada sesi pembelajaran ini, materi yang diajarkan merupakan materi dasar bahasa pemrograman C dan Python (untuk Region Senayan) yang akan berguna untuk kalian freshmen School of Computer Science yang belum pernah mencoba coding.</p>
+                </div>
+                <div>
+                    <div id="event-place">
+                        <h2>KEMANGGISAN</h2>
+                    </div>
+                    <div class="event-pbp-carousel">
+                        <div class="event-pbp-left-arrow" onclick="prevSlide()">
+                            <img src="assets/left-arrow.svg" alt="Previous" />
+                        </div>
+                        <div class="carousel" id="carousel-content"></div>
+                        <div class="event-pbp-right-arrow" onclick="nextSlide()">
+                            <img src="assets/right-arrow.svg" alt="Next" />
+                        </div>
+                    </div>
+                </div>
+                <a href="registration.himtibinus.or.id/home" target="”_blank”" class="event-pbp-register"><button>REGISTER NOW</button></a>
               </div>
             </div>
-
-            <div class="event-pbp-register-button">
-              <a href="registration.himtibinus.or.id/home" target="”_blank”"
-                ><button>REGISTER NOW</button></a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- guest star, game, side quest, talkshow section -->
-      <!-- TODO: poster sidequest how-->
-      <section class="guest-game-side-talk-wrap">
-        <div class="guest-wrap rectangle-wrap">
-          <div class="guest-title">
-            <h2>MEET OUR<br />GUEST STAR</h2>
-          </div>
-          <div class="guest-description-image-wrap">
-            <div class="guest-description">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod
-                tempor incididunt labore dolore magna aliqua.
-              </p>
-            </div>
-            <div class="guest-image">
-              <img src="assets/amanda.png" alt="guest image" />
-              <h2>AMANDA CAESA</h2>
-            </div>
-          </div>
-        </div>
-        <div class="talk-game-side-wrap">
-          <div class="talk-wrap rectangle-wrap">
-            <h1>TALKHOW</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod
-              tempor incididunt labore dolore magna aliqua.
-            </p>
-          </div>
-          <div class="talk-wrap rectangle-wrap">
-            <h1>GAMES</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod
-              tempor incididunt labore dolore magna aliqua.
-            </p>
-          </div>
-          <div class="talk-wrap rectangle-wrap">
-            <h1>SIDE QUEST</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod
-              tempor incididunt labore dolore magna aliqua.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- expo section -->
-      <!-- TODO: bikin carousel, lagi :)-->
-      <section class="expo-section">
-        <div class="expo-title">
-          <h1>EXPO</h1>
-        </div>
-        <div class="expo-card-wrap">
-          <div class="expo-button-left" id="click-left">
-            <img src="assets/left-arrow.svg" alt="" />
-          </div>
-
-          <div class="expo-card-cont">
-            <div class="expo-card" id="card-1">
-              <div class="expo-card-place-desc" id="card-desc-1">
-                <h1>ALAM SUTERA</h1>
-                <p>Senin, 11 September 2023</p>
-                <p>11:00 WIB</p>
-                <p>Lobby Binus @Alam Sutera</p>
+          </section>
+    
+          <!-- guest star, game, side quest, talkshow section -->
+          <section class="main-event">
+            <div class="guest-star">
+              <h1>MEET OUR<br />GUEST STAR</h1>
+              <div class="guest-star-content">
+                <div class="guest-description">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod
+                    tempor incididunt labore dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="guest-image">
+                  <img src="assets/amanda.png" alt="guest image" />
+                  <h2>AMANDA CAESA</h2>
+                </div>
               </div>
             </div>
-            <div class="expo-card" id="card-2">
-              <div class="expo-card-place-desc" id="card-desc-2">
-                <h1>KEMANGGISAN</h1>
-                <p>Senin, 11 September 2023</p>
-                <p>11:00 WIB</p>
-                <p>Lobby Binus @Kemanggisan</p>
+            <div class="events-container">
+              <div class="events-card">
+                <h2>TALKHOW</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod
+                  tempor incididunt labore dolore magna aliqua.
+                </p>
+              </div>
+              <div class="events-card" style="margin: 1rem 1rem 0;">
+                <h2>GAMES</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod
+                  tempor incididunt labore dolore magna aliqua.
+                </p>
+              </div>
+              <div class="events-card">
+                <h2>SIDE QUEST</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod
+                  tempor incididunt labore dolore magna aliqua.
+                </p>
               </div>
             </div>
-            <div class="expo-card" id="card-3">
-              <div class="expo-card-place-desc" id="card-desc-3">
-                <h1>SENAYAN</h1>
-                <p>Senin, 11 September 2023</p>
-                <p>11:00 WIB</p>
-                <p>Lobby Binus @Senayan</p>
+          </section>
+    
+          <!-- expo section -->
+          <section class="expo">
+            <h1>EXPO</h1>
+            <div class="expo-content">
+              <div class="expo-button-left" id="click-left">
+                <img src="assets/left-arrow.svg" alt="" />
+              </div>
+    
+              <div class="expo-card-cont">
+                <div class="expo-card" id="card-1">
+                  <div class="expo-card-place-desc" id="card-desc-1">
+                    <h2>ALAM SUTERA</h2>
+                    <p>Senin, 11 September 2023</p>
+                    <p>11:00 WIB</p>
+                    <p>Lobby Binus @Alam Sutera</p>
+                  </div>
+                </div>
+                <div class="expo-card" id="card-2">
+                  <div class="expo-card-place-desc" id="card-desc-2">
+                    <h2>KEMANGGISAN</h2>
+                    <p>Senin, 11 September 2023</p>
+                    <p>11:00 WIB</p>
+                    <p>Lobby Binus @Kemanggisan</p>
+                  </div>
+                </div>
+                <div class="expo-card" id="card-3">
+                  <div class="expo-card-place-desc" id="card-desc-3">
+                    <h2>SENAYAN</h2>
+                    <p>Senin, 11 September 2023</p>
+                    <p>11:00 WIB</p>
+                    <p>Lobby Binus @Senayan</p>
+                  </div>
+                </div>
+                <div class="expo-card" id="card-4">
+                  <div class="expo-card-place-desc" id="card-desc-4">
+                    <h2>SEMARANG</h2>
+                    <p>Senin, 11 September 2023</p>
+                    <p>11:00 WIB</p>
+                    <p>Lobby Binus @Semarang</p>
+                  </div>
+                </div>
+                <div class="expo-card" id="card-5">
+                  <div class="expo-card-place-desc" id="card-desc-5">
+                    <h2>MALANG</h2>
+                    <p>Senin, 11 September 2023</p>
+                    <p>11:00 WIB</p>
+                    <p>Lobby Binus @Malang</p>
+                  </div>
+                </div>
+                <div class="expo-card" id="card-6">
+                  <div class="expo-card-place-desc" id="card-desc-6">
+                    <h2>BEKASI</h2>
+                    <p>Senin, 11 September 2023</p>
+                    <p>11:00 WIB</p>
+                    <p>Lobby Binus @Bekasi</p>
+                  </div>
+                </div>
+                <div class="expo-card" id="card-7">
+                  <div class="expo-card-place-desc" id="card-desc-7">
+                    <h2>BANDUNG</h2>
+                    <p>Senin, 11 September 2023</p>
+                    <p>11:00 WIB</p>
+                    <p>Lobby Binus @Bandung</p>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="expo-button-right" id="click-right">
+                <img src="assets/right-arrow.svg" alt="" />
               </div>
             </div>
-            <div class="expo-card" id="card-4">
-              <div class="expo-card-place-desc" id="card-desc-4">
-                <h1>SEMARANG</h1>
-                <p>Senin, 11 September 2023</p>
-                <p>11:00 WIB</p>
-                <p>Lobby Binus @Semarang</p>
-              </div>
-            </div>
-            <div class="expo-card" id="card-5">
-              <div class="expo-card-place-desc" id="card-desc-5">
-                <h1>MALANG</h1>
-                <p>Senin, 11 September 2023</p>
-                <p>11:00 WIB</p>
-                <p>Lobby Binus @Malang</p>
-              </div>
-            </div>
-            <div class="expo-card" id="card-6">
-              <div class="expo-card-place-desc" id="card-desc-6">
-                <h1>PLACE 6</h1>
-                <p>Senin, 11 September 2023</p>
-                <p>11:00 WIB</p>
-                <p>Lobby Binus @hehe boi</p>
-              </div>
-            </div>
-            <div class="expo-card" id="card-7">
-              <div class="expo-card-place-desc" id="card-desc-7">
-                <h1>PLACE 7</h1>
-                <p>Senin, 11 September 2023</p>
-                <p>11:00 WIB</p>
-                <p>Lobby Binus @tes</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="expo-button-right" id="click-right">
-            <img src="assets/right-arrow.svg" alt="" />
-          </div>
-        </div>
-      </section>
+          </section>
+      </div>
     </main>
 
     <section class="footer">
-      <div class="footer-content">
-        <div class="footer-logos">
-          <img
-            src="assets/logo2.png"
-            alt="TECHNO 2024 Logo"
-            class="logo-techno"
-          />
-          <img
-            src="assets/logo-binus.png"
-            alt="BINUS University Logo"
-            class="logo-binus"
-          />
-          <img
-            src="assets/logo-himti.png"
-            alt="HIMTI Logo"
-            class="logo-himti"
-          />
+        <div class="footer-content">
+            <div class="footer-logos">
+                <img src="assets/logo2.png" alt="TECHNO 2024 Logo">
+                <img src="assets/logo-binus.png" alt="BINUS University Logo">
+                <img src="assets/logo-himti.png" alt="HIMTI Logo">
+            </div>
+            <p>©2023 Himpunan Mahasiswa Teknik Informatika (HIMTI) BINUS UNIVERSITY.</p>
+            <p>© All Rights Reserved</p>
         </div>
-        <p>
-          ©2024 Himpunan Mahasiswa Teknik Informatika (HIMTI) BINUS UNIVERSITY.
-        </p>
-        <p>© All Rights Reserved</p>
-      </div>
-    </section>
+      </section>
 
     <script src="./event.js" type="text/js"></script>
   </body>

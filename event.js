@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const mainContent = document.querySelector('main');
+
+    menuToggle.addEventListener('click', function () {
+      navLinks.classList.toggle('active');
+      mainContent.classList.toggle('active');
+    });
+});
+
 // PBP
 let places = [
     {
@@ -145,8 +156,8 @@ document.getElementById("click-right").addEventListener("click", function () {
     if (currCard < 7 && currCard > 2) {
         document.getElementById("click-left").style.visibility = "visible";
         document.getElementById("click-right").style.visibility = "visible";
-        document.getElementById(`card-${currCard}`).style.width = "30.3rem";
-        document.getElementById(`card-${currCard}`).style.height = "40.6rem";
+        document.getElementById(`card-${currCard}`).style.width = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "30rem";
         document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
         document.getElementById(`card-${currCard - 1}`).style.height =
             "24.4rem";
@@ -169,8 +180,8 @@ document.getElementById("click-right").addEventListener("click", function () {
     } else if (currCard == 7) {
         document.getElementById("click-right").style.visibility = "hidden";
         document.getElementById("click-left").style.visibility = "visible";
-        document.getElementById(`card-${currCard}`).style.width = "30.3rem";
-        document.getElementById(`card-${currCard}`).style.height = "40.6rem";
+        document.getElementById(`card-${currCard}`).style.width = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "30rem";
         document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
         document.getElementById(`card-${currCard - 1}`).style.height =
             "24.4rem";
@@ -184,8 +195,8 @@ document.getElementById("click-right").addEventListener("click", function () {
     } else {
         document.getElementById("click-left").style.visibility = "visible";
         document.getElementById("click-right").style.visibility = "visible";
-        document.getElementById(`card-${currCard}`).style.width = "30.3rem";
-        document.getElementById(`card-${currCard}`).style.height = "40.6rem";
+        document.getElementById(`card-${currCard}`).style.width = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "30rem";
         document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
         document.getElementById(`card-${currCard - 1}`).style.height =
             "24.4rem";
@@ -207,8 +218,8 @@ document.getElementById("click-left").addEventListener("click", function () {
     if (currCard > 1 && currCard < 6) {
         document.getElementById("click-right").style.visibility = "visible";
         document.getElementById("click-left").style.visibility = "visible";
-        document.getElementById(`card-${currCard}`).style.width = "30.3rem";
-        document.getElementById(`card-${currCard}`).style.height = "40.6rem";
+        document.getElementById(`card-${currCard}`).style.width = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "30rem";
         document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
         document.getElementById(`card-${currCard - 1}`).style.height =
             "24.4rem";
@@ -233,8 +244,8 @@ document.getElementById("click-left").addEventListener("click", function () {
     } else if (currCard == 1) {
         document.getElementById("click-right").style.visibility = "visible";
         document.getElementById("click-left").style.visibility = "hidden";
-        document.getElementById(`card-${currCard}`).style.width = "30.3rem";
-        document.getElementById(`card-${currCard}`).style.height = "40.6rem";
+        document.getElementById(`card-${currCard}`).style.width = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "30rem";
         document.getElementById(`card-${currCard + 1}`).style.width = "23.6rem";
         document.getElementById(`card-${currCard + 1}`).style.height =
             "24.4rem";
@@ -248,8 +259,8 @@ document.getElementById("click-left").addEventListener("click", function () {
     } else {
         document.getElementById("click-right").style.visibility = "visible";
         document.getElementById("click-left").style.visibility = "visible";
-        document.getElementById(`card-${currCard}`).style.width = "30.3rem";
-        document.getElementById(`card-${currCard}`).style.height = "40.6rem";
+        document.getElementById(`card-${currCard}`).style.width = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "30rem";
         document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
         document.getElementById(`card-${currCard - 1}`).style.height =
             "24.4rem";
@@ -270,5 +281,53 @@ document.getElementById("click-left").addEventListener("click", function () {
         document.getElementById(`card-desc-${currCard + 1}`).style.height =
             "100%";
         document.getElementById(`card-${currCard + 1}`).style.marginLeft = "0";
+    }
+});
+
+// Expo Carousel Logic for Smaller Screens
+let currentCardIndex = 0;
+const cards = document.querySelectorAll('.expo-card');
+const leftButton = document.getElementById("click-left");
+const rightButton = document.getElementById("click-right");
+
+function updateButtons() {
+    if (currentCardIndex === 0) {
+        leftButton.style.visibility = "hidden";
+    } else {
+        leftButton.style.visibility = "visible";
+    }
+
+    if (currentCardIndex === cards.length - 1) {
+        rightButton.style.visibility = "hidden";
+    } else {
+        rightButton.style.visibility = "visible";
+    }
+}
+
+function showCard(index) {
+    cards.forEach((card, i) => {
+        if (i === index) {
+            card.classList.add('active');
+        } else {
+            card.classList.remove('active');
+        }
+    });
+    updateButtons();
+}
+
+// Initial display of the first card and button visibility
+showCard(currentCardIndex);
+
+rightButton.addEventListener("click", function () {
+    if (currentCardIndex < cards.length - 1) {
+        currentCardIndex++;
+        showCard(currentCardIndex);
+    }
+});
+
+leftButton.addEventListener("click", function () {
+    if (currentCardIndex > 0) {
+        currentCardIndex--;
+        showCard(currentCardIndex);
     }
 });
