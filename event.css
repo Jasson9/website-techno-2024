@@ -101,7 +101,7 @@ main img {
 }
 
 .event-pbp {
-  background: rgba(27, 94, 167, 0.9);
+  background: rgba(27, 94, 167);
   height: auto;
   width: 80%;
   max-width: 1200px;
@@ -333,7 +333,7 @@ main img {
 }
 
 .events-card {
-  background-image: url('assets/guest-star.png');
+  background-image: url('assets/event-card-bg.png');
   background-size: cover;
   background-position: center;
   border: 3px #49a1cd solid;
@@ -672,6 +672,10 @@ main img {
     width: 7.5rem;
   }
 
+  .guest-star h1 {
+    font-size: 2.5rem;
+  }
+
   .guest-description p {
     font-size: 1rem;
   }
@@ -697,7 +701,7 @@ main img {
 
   .events-container {
     flex-direction: column;
-    width: 70%;
+    width: 80%;
   }
 
   .events-card {
@@ -744,15 +748,33 @@ main img {
   .expo-button-right img {
     height: 1.5rem;
   }
+
+  .expo-card-place-desc h2{
+    font-size: 4.5vw;
+  }
+
+  .expo-card-place-desc p{
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 580px) {
+  main {
+    padding-bottom: 390vh;
+  }
 }
 
 @media (max-width: 480px) {
   main {
-    padding-bottom: 450vh;
+    padding-bottom: 850vw;
+  }
+
+  .event-pbp {
+    margin-top: 0rem;
   }
   
   .event-pbp-content {
-    width: 70%;
+    width: 100%;
     padding: 1.2rem 1.2rem 2rem 1.2rem;
   }
 
@@ -768,6 +790,24 @@ main img {
 
   .event-pbp-content p {
     font-size: 0.8rem;
-    padding: 0.2rem;
+    padding: 0.1rem;
+  }
+}
+
+@media (max-width: 410px) {
+  main {
+    padding-bottom: 850vw;
+  }
+}
+
+@media (max-width: 375px) {
+  main {
+    padding-bottom: 925vw;
+  }
+}
+
+@media (max-width: 320px) {
+  main {
+    padding-bottom: 925vw;
   }
 }

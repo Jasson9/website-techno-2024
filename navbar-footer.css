@@ -44,6 +44,22 @@ body::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: none;
+  }
+
+  /* IE/Edge */
+  body {
+    -ms-overflow-style: none;
+  }
+}
+
 /* Navbar */
 header {
   background-color: #0a1847;

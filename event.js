@@ -32,13 +32,13 @@ let places = [
                 time: "09.00 - 11.00",
             },
             {
-                date: "Selasa, 19 Agustus 2024",
+                date: "Senin, 19 Agustus 2024",
                 location: "Binus @Kemanggisan",
                 Shift: "B",
                 time: "09.30 - 11.30",
             },
             {
-                date: "Rabu, 19 Agustus 2024",
+                date: "Senin, 19 Agustus 2024",
                 location: "Binus @Kemanggisan",
                 Shift: "C",
                 time: "13.00 - 15.00",
@@ -138,7 +138,7 @@ function updateCarousel() {
     `;
 
     document.getElementById("carousel-content").innerHTML = `
-    <p>${details.date}</p>
+    <p>Date : ${details.date}</p>
     <p>Location : ${details.location}</p>
     <p>Shift : ${details.Shift}</p>
     <p>Time : ${details.time}</p>
@@ -343,9 +343,13 @@ const leftButton = document.getElementById("click-left");
 const rightButton = document.getElementById("click-right");
 
 function applyCardSize() {
-    if (window.innerWidth <= 480) {
-        document.getElementById(`card-${currCard - 1}`).style.width = "65vw";
-        document.getElementById(`card-${currCard - 1}`).style.height = "65vw";
+    if (window.innerWidth <= 768) {
+        document.getElementById(`card-${currCard - 1}`).style.width = "60vw";
+        document.getElementById(`card-${currCard - 1}`).style.height = "60vw";
+        document.getElementById(`card-${currCard + 1}`).style.width = "60vw";
+        document.getElementById(`card-${currCard + 1}`).style.height = "60vw";
+        document.getElementById(`card-${currCard}`).style.width = "60vw";
+        document.getElementById(`card-${currCard}`).style.height = "60vw";
     } else {
         document.getElementById(`card-${currCard}`).style.width = "30rem";
         document.getElementById(`card-${currCard}`).style.height = "35rem";
@@ -353,13 +357,13 @@ function applyCardSize() {
 }
 
 function updateButtons() {
-    if (currentCardIndex === 1) {
+    if (currentCardIndex === 0) {
         leftButton.style.visibility = "hidden";
     } else {
         leftButton.style.visibility = "visible";
     }
 
-    if (currentCardIndex === cards.length - 2) {
+    if (currentCardIndex === cards.length - 1) {
         rightButton.style.visibility = "hidden";
     } else {
         rightButton.style.visibility = "visible";
@@ -374,18 +378,16 @@ function showCard(index) {
             card.classList.remove("active");
         }
     });
-    applyCardSize(); // Call applyCardSize when showing a card
+    applyCardSize();
     updateButtons();
 }
 
-// Initial display of the first card and button visibility
 showCard(currentCardIndex);
 
-// Apply card size on window resize
 window.addEventListener("resize", applyCardSize);
 
 rightButton.addEventListener("click", function () {
-    if (currentCardIndex < cards.length - 1) {
+    if (currentCardIndex < cards.length) {
         currentCardIndex++;
         showCard(currentCardIndex);
     }
