@@ -197,159 +197,230 @@ updateCarousel();
 // Expo
 let currCard = 2;
 document.getElementById("click-right").addEventListener("click", function () {
-    currCard++;
-    console.log(currCard);
-    if (currCard < 7 && currCard > 2) {
-        document.getElementById("click-left").style.visibility = "visible";
-
-        if (currCard === 6) {
-            document.getElementById("click-right").style.visibility = "hidden";
-        } else {
-            document.getElementById("click-right").style.visibility = "visible";
-        }
-
-        document.getElementById(`card-${currCard}`).style.width = "30rem";
-        document.getElementById(`card-${currCard}`).style.height = "35rem";
-        document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
-        document.getElementById(`card-${currCard - 1}`).style.height =
-            "24.4rem";
-        document.getElementById(`card-${currCard - 2}`).style.width = "0";
-        document.getElementById(`card-${currCard - 2}`).style.height = "0";
-        document.getElementById(`card-${currCard - 2}`).style.marginRight =
-            "-3rem";
-        document.getElementById(`card-${currCard - 2}`).style.opacity = "0";
-        document.getElementById(`card-desc-${currCard - 2}`).style.width = "0";
-        document.getElementById(`card-desc-${currCard - 2}`).style.height = "0";
-        document.getElementById(`card-${currCard + 1}`).style.width = "23.6rem";
-        document.getElementById(`card-${currCard + 1}`).style.height =
-            "24.4rem";
-        document.getElementById(`card-${currCard + 1}`).style.opacity = "1";
-        document.getElementById(`card-desc-${currCard + 1}`).style.width =
-            "100%";
-        document.getElementById(`card-desc-${currCard + 1}`).style.height =
-            "100%";
-        document.getElementById(`card-${currCard + 1}`).style.marginLeft = "0";
-    } else if (currCard == 4) {
-        document.getElementById("click-right").style.visibility = "hidden";
-        document.getElementById("click-left").style.visibility = "visible";
-        document.getElementById(`card-${currCard}`).style.width = "30rem";
-        document.getElementById(`card-${currCard}`).style.height = "35rem";
-        document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
-        document.getElementById(`card-${currCard - 1}`).style.height =
-            "24.4rem";
-        document.getElementById(`card-${currCard - 2}`).style.width = "0";
-        document.getElementById(`card-${currCard - 2}`).style.height = "0";
-        document.getElementById(`card-${currCard - 2}`).style.marginRight =
-            "-3rem";
-        document.getElementById(`card-${currCard - 2}`).style.opacity = "0";
-        document.getElementById(`card-desc-${currCard - 2}`).style.width = "0";
-        document.getElementById(`card-desc-${currCard - 2}`).style.height = "0";
-    } else {
-        document.getElementById("click-left").style.visibility = "visible";
-        document.getElementById("click-right").style.visibility = "visible";
-        document.getElementById(`card-${currCard}`).style.width = "30rem";
-        document.getElementById(`card-${currCard}`).style.height = "35rem";
-        document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
-        document.getElementById(`card-${currCard - 1}`).style.height =
-            "24.4rem";
-
-        document.getElementById(`card-${currCard + 1}`).style.width = "23.6rem";
-        document.getElementById(`card-${currCard + 1}`).style.height =
-            "24.4rem";
-        document.getElementById(`card-${currCard + 1}`).style.opacity = "1";
-        document.getElementById(`card-desc-${currCard + 1}`).style.width =
-            "100%";
-        document.getElementById(`card-desc-${currCard + 1}`).style.height =
-            "100%";
-        document.getElementById(`card-${currCard + 1}`).style.marginLeft = "0";
-    }
+    changeCardToRight();
 });
 
 document.getElementById("click-left").addEventListener("click", function () {
-    currCard--;
-    if (currCard > 1 && currCard < 6) {
-        document.getElementById("click-right").style.visibility = "visible";
-        document.getElementById("click-left").style.visibility = "visible";
-        document.getElementById(`card-${currCard}`).style.width = "30rem";
-        document.getElementById(`card-${currCard}`).style.height = "35rem";
-        document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
-        document.getElementById(`card-${currCard - 1}`).style.height =
-            "24.4rem";
-        document.getElementById(`card-${currCard - 1}`).style.opacity = "1";
-        document.getElementById(`card-desc-${currCard - 1}`).style.opacity =
-            "1";
-        document.getElementById(`card-desc-${currCard - 1}`).style.width =
-            "100%";
-        document.getElementById(`card-desc-${currCard - 1}`).style.height =
-            "100%";
-        document.getElementById(`card-${currCard - 1}`).style.marginRight = "0";
-        document.getElementById(`card-${currCard + 1}`).style.width = "23.6rem";
-        document.getElementById(`card-${currCard + 1}`).style.height =
-            "24.4rem";
-        document.getElementById(`card-${currCard + 2}`).style.width = "0";
-        document.getElementById(`card-${currCard + 2}`).style.height = "0";
-        document.getElementById(`card-${currCard + 2}`).style.marginLeft =
-            "-3rem";
-        document.getElementById(`card-${currCard + 2}`).style.opacity = "0";
-        document.getElementById(`card-desc-${currCard + 2}`).style.width = "0";
-        document.getElementById(`card-desc-${currCard + 2}`).style.height = "0";
-    } else if (currCard == 1) {
-        document.getElementById("click-right").style.visibility = "visible";
-        document.getElementById("click-left").style.visibility = "hidden";
-        document.getElementById(`card-${currCard}`).style.width = "30rem";
-        document.getElementById(`card-${currCard}`).style.height = "35rem";
-        document.getElementById(`card-${currCard + 1}`).style.width = "23.6rem";
-        document.getElementById(`card-${currCard + 1}`).style.height =
-            "24.4rem";
-        document.getElementById(`card-${currCard + 2}`).style.width = "0";
-        document.getElementById(`card-${currCard + 2}`).style.height = "0";
-        document.getElementById(`card-${currCard + 2}`).style.marginLeft =
-            "-3rem";
-        document.getElementById(`card-${currCard + 2}`).style.opacity = "0";
-        document.getElementById(`card-desc-${currCard + 2}`).style.width = "0";
-        document.getElementById(`card-desc-${currCard + 2}`).style.height = "0";
-    } else {
-        document.getElementById("click-right").style.visibility = "visible";
-        document.getElementById("click-left").style.visibility = "visible";
-        document.getElementById(`card-${currCard}`).style.width = "30rem";
-        document.getElementById(`card-${currCard}`).style.height = "35rem";
-        document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
-        document.getElementById(`card-${currCard - 1}`).style.height =
-            "24.4rem";
-        document.getElementById(`card-${currCard - 1}`).style.opacity = "1";
-        document.getElementById(`card-desc-${currCard - 1}`).style.opacity =
-            "1";
-        document.getElementById(`card-desc-${currCard - 1}`).style.width =
-            "100%";
-        document.getElementById(`card-desc-${currCard - 1}`).style.height =
-            "100%";
-        document.getElementById(`card-${currCard - 1}`).style.marginRight = "0";
-        document.getElementById(`card-${currCard + 1}`).style.width = "23.6rem";
-        document.getElementById(`card-${currCard + 1}`).style.height =
-            "24.4rem";
-        document.getElementById(`card-${currCard + 1}`).style.opacity = "1";
-        document.getElementById(`card-desc-${currCard + 1}`).style.width =
-            "100%";
-        document.getElementById(`card-desc-${currCard + 1}`).style.height =
-            "100%";
-        document.getElementById(`card-${currCard + 1}`).style.marginLeft = "0";
-    }
+    changeCardToLeft();
 });
 
+function changeCardToRight() {
+    if (window.innerWidth <= 768) {
+        if (currentCardIndex < cards.length - 1) {
+            currentCardIndex++;
+            console.log(currentCardIndex);
+            showCard(currentCardIndex);
+        }
+    } else {
+        currCard++;
+        // console.log(currCard);
+        if (currCard < 7 && currCard > 2) {
+            document.getElementById("click-left").style.visibility = "visible";
+
+            if (currCard === 6) {
+                document.getElementById("click-right").style.visibility =
+                    "hidden";
+            } else {
+                document.getElementById("click-right").style.visibility =
+                    "visible";
+            }
+
+            document.getElementById(`card-${currCard}`).style.width = "30rem";
+            document.getElementById(`card-${currCard}`).style.height = "35rem";
+            document.getElementById(`card-${currCard - 1}`).style.width =
+                "23.6rem";
+            document.getElementById(`card-${currCard - 1}`).style.height =
+                "24.4rem";
+            document.getElementById(`card-${currCard - 2}`).style.width = "0";
+            document.getElementById(`card-${currCard - 2}`).style.height = "0";
+            document.getElementById(`card-${currCard - 2}`).style.marginRight =
+                "-3rem";
+            document.getElementById(`card-${currCard - 2}`).style.opacity = "0";
+            document.getElementById(`card-desc-${currCard - 2}`).style.width =
+                "0";
+            document.getElementById(`card-desc-${currCard - 2}`).style.height =
+                "0";
+            document.getElementById(`card-${currCard + 1}`).style.width =
+                "23.6rem";
+            document.getElementById(`card-${currCard + 1}`).style.height =
+                "24.4rem";
+            document.getElementById(`card-${currCard + 1}`).style.opacity = "1";
+            document.getElementById(`card-desc-${currCard + 1}`).style.width =
+                "100%";
+            document.getElementById(`card-desc-${currCard + 1}`).style.height =
+                "100%";
+            document.getElementById(`card-${currCard + 1}`).style.marginLeft =
+                "0";
+        } else if (currCard == 4) {
+            document.getElementById("click-right").style.visibility = "hidden";
+            document.getElementById("click-left").style.visibility = "visible";
+            document.getElementById(`card-${currCard}`).style.width = "30rem";
+            document.getElementById(`card-${currCard}`).style.height = "35rem";
+            document.getElementById(`card-${currCard - 1}`).style.width =
+                "23.6rem";
+            document.getElementById(`card-${currCard - 1}`).style.height =
+                "24.4rem";
+            document.getElementById(`card-${currCard - 2}`).style.width = "0";
+            document.getElementById(`card-${currCard - 2}`).style.height = "0";
+            document.getElementById(`card-${currCard - 2}`).style.marginRight =
+                "-3rem";
+            document.getElementById(`card-${currCard - 2}`).style.opacity = "0";
+            document.getElementById(`card-desc-${currCard - 2}`).style.width =
+                "0";
+            document.getElementById(`card-desc-${currCard - 2}`).style.height =
+                "0";
+        } else {
+            document.getElementById("click-left").style.visibility = "visible";
+            document.getElementById("click-right").style.visibility = "visible";
+            document.getElementById(`card-${currCard}`).style.width = "30rem";
+            document.getElementById(`card-${currCard}`).style.height = "35rem";
+            document.getElementById(`card-${currCard - 1}`).style.width =
+                "23.6rem";
+            document.getElementById(`card-${currCard - 1}`).style.height =
+                "24.4rem";
+
+            document.getElementById(`card-${currCard + 1}`).style.width =
+                "23.6rem";
+            document.getElementById(`card-${currCard + 1}`).style.height =
+                "24.4rem";
+            document.getElementById(`card-${currCard + 1}`).style.opacity = "1";
+            document.getElementById(`card-desc-${currCard + 1}`).style.width =
+                "100%";
+            document.getElementById(`card-desc-${currCard + 1}`).style.height =
+                "100%";
+            document.getElementById(`card-${currCard + 1}`).style.marginLeft =
+                "0";
+        }
+    }
+}
+
+function changeCardToLeft() {
+    if (window.innerWidth <= 768) {
+        if (currentCardIndex > 0) {
+            currentCardIndex--;
+            showCard(currentCardIndex);
+        }
+    } else {
+        currCard--;
+        if (currCard > 2 && currCard < 6) {
+            document.getElementById("click-right").style.visibility = "visible";
+            document.getElementById("click-left").style.visibility = "visible";
+            document.getElementById(`card-${currCard}`).style.width = "30rem";
+            document.getElementById(`card-${currCard}`).style.height = "35rem";
+            document.getElementById(`card-${currCard - 1}`).style.width =
+                "23.6rem";
+            document.getElementById(`card-${currCard - 1}`).style.height =
+                "24.4rem";
+            document.getElementById(`card-${currCard - 1}`).style.opacity = "1";
+            document.getElementById(`card-desc-${currCard - 1}`).style.opacity =
+                "1";
+            document.getElementById(`card-desc-${currCard - 1}`).style.width =
+                "100%";
+            document.getElementById(`card-desc-${currCard - 1}`).style.height =
+                "100%";
+            document.getElementById(`card-${currCard - 1}`).style.marginRight =
+                "0";
+            document.getElementById(`card-${currCard + 1}`).style.width =
+                "23.6rem";
+            document.getElementById(`card-${currCard + 1}`).style.height =
+                "24.4rem";
+            document.getElementById(`card-${currCard + 2}`).style.width = "0";
+            document.getElementById(`card-${currCard + 2}`).style.height = "0";
+            document.getElementById(`card-${currCard + 2}`).style.marginLeft =
+                "-3rem";
+            document.getElementById(`card-${currCard + 2}`).style.opacity = "0";
+            document.getElementById(`card-desc-${currCard + 2}`).style.width =
+                "0";
+            document.getElementById(`card-desc-${currCard + 2}`).style.height =
+                "0";
+        } else if (currCard == 1) {
+            document.getElementById("click-right").style.visibility = "visible";
+            document.getElementById("click-left").style.visibility = "hidden";
+            document.getElementById(`card-${currCard}`).style.width = "30rem";
+            document.getElementById(`card-${currCard}`).style.height = "35rem";
+            document.getElementById(`card-${currCard + 1}`).style.width =
+                "23.6rem";
+            document.getElementById(`card-${currCard + 1}`).style.height =
+                "24.4rem";
+            document.getElementById(`card-${currCard + 2}`).style.width = "0";
+            document.getElementById(`card-${currCard + 2}`).style.height = "0";
+            document.getElementById(`card-${currCard + 2}`).style.marginLeft =
+                "-3rem";
+            document.getElementById(`card-${currCard + 2}`).style.opacity = "0";
+            document.getElementById(`card-desc-${currCard + 2}`).style.width =
+                "0";
+            document.getElementById(`card-desc-${currCard + 2}`).style.height =
+                "0";
+        } else {
+            document.getElementById("click-right").style.visibility = "visible";
+            document.getElementById("click-left").style.visibility = "hidden";
+            document.getElementById(`card-${currCard}`).style.width = "30rem";
+            document.getElementById(`card-${currCard}`).style.height = "35rem";
+            document.getElementById(`card-${currCard - 1}`).style.width =
+                "23.6rem";
+            document.getElementById(`card-${currCard - 1}`).style.height =
+                "24.4rem";
+            document.getElementById(`card-${currCard - 1}`).style.opacity = "1";
+            document.getElementById(`card-desc-${currCard - 1}`).style.opacity =
+                "1";
+            document.getElementById(`card-desc-${currCard - 1}`).style.width =
+                "100%";
+            document.getElementById(`card-desc-${currCard - 1}`).style.height =
+                "100%";
+            document.getElementById(`card-${currCard - 1}`).style.marginRight =
+                "0";
+            document.getElementById(`card-${currCard + 1}`).style.width =
+                "23.6rem";
+            document.getElementById(`card-${currCard + 1}`).style.height =
+                "24.4rem";
+            document.getElementById(`card-${currCard + 2}`).style.width = "0";
+            document.getElementById(`card-${currCard + 2}`).style.height = "0";
+            document.getElementById(`card-${currCard + 2}`).style.marginLeft =
+                "-3rem";
+            document.getElementById(`card-${currCard + 2}`).style.opacity = "0";
+            document.getElementById(`card-desc-${currCard + 2}`).style.width =
+                "0";
+            document.getElementById(`card-desc-${currCard + 2}`).style.height =
+                "0";
+        }
+    }
+}
+
 // Expo Carousel Logic for Smaller Screens
-let currentCardIndex = 1;
+let currentCardIndex = 0;
 const cards = document.querySelectorAll(".expo-card");
 const leftButton = document.getElementById("click-left");
 const rightButton = document.getElementById("click-right");
 
 function applyCardSize() {
     if (window.innerWidth <= 768) {
-        document.getElementById(`card-${currCard - 1}`).style.width = "60vw";
-        document.getElementById(`card-${currCard - 1}`).style.height = "60vw";
-        document.getElementById(`card-${currCard + 1}`).style.width = "60vw";
-        document.getElementById(`card-${currCard + 1}`).style.height = "60vw";
-        document.getElementById(`card-${currCard}`).style.width = "60vw";
-        document.getElementById(`card-${currCard}`).style.height = "60vw";
+        if (currentCardIndex === 6) {
+            document.getElementById("click-right").style.visibility = "hidden";
+        } else if (currentCardIndex === 0) {
+            document.getElementById("click-left").style.visibility = "hidden";
+        }
+
+        document.getElementById(`card-${currentCardIndex + 1}`).style.width =
+            "60vw";
+        document.getElementById(`card-${currentCardIndex + 1}`).style.height =
+            "60vw";
+        if (currentCardIndex >= 1) {
+            document.getElementById(`card-${currentCardIndex}`).style.opacity =
+                "0";
+        }
+        if (currentCardIndex <= 5) {
+            document.getElementById(
+                `card-${currentCardIndex + 2}`,
+            ).style.opacity = "0";
+        }
+
+        document.getElementById(`card-${currentCardIndex + 1}`).style.opacity =
+            "1";
+
+        // for (let i = 1; i <= 7; i++) {
+        //     document.getElementById(`card-${i}`).removeAttribute("id");
+        //     document.getElementById(`card-desc-${i}`).removeAttribute("id");
+        // }
     } else {
         document.getElementById(`card-${currCard}`).style.width = "30rem";
         document.getElementById(`card-${currCard}`).style.height = "35rem";
@@ -359,13 +430,12 @@ function applyCardSize() {
 function updateButtons() {
     if (currentCardIndex === 0) {
         leftButton.style.visibility = "hidden";
+        rightButton.style.visibility = "visible";
+    } else if (currentCardIndex === cards.length - 1) {
+        rightButton.style.visibility = "hidden";
+        leftButton.style.visibility = "visible";
     } else {
         leftButton.style.visibility = "visible";
-    }
-
-    if (currentCardIndex === cards.length - 1) {
-        rightButton.style.visibility = "hidden";
-    } else {
         rightButton.style.visibility = "visible";
     }
 }
@@ -386,16 +456,10 @@ showCard(currentCardIndex);
 
 window.addEventListener("resize", applyCardSize);
 
-rightButton.addEventListener("click", function () {
-    if (currentCardIndex < cards.length) {
-        currentCardIndex++;
-        showCard(currentCardIndex);
-    }
-});
+// rightButton.addEventListener("click", function () {
+//     changeCardToRight();
+// });
 
-leftButton.addEventListener("click", function () {
-    if (currentCardIndex > 0) {
-        currentCardIndex--;
-        showCard(currentCardIndex);
-    }
-});
+// leftButton.addEventListener("click", function () {
+//     changeCardToLeft();
+// });

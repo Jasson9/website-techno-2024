@@ -51,34 +51,44 @@ a {
 main {
   display: flex;
   flex-direction: column;
-  padding-bottom: 200vh;
+  padding-bottom: 50vh;
 }
 
 main img {
   position: relative;
   width: 100vw;
+  height: auto;
 }
 
-.background-events-tab, .background-events-phone {
+.background-events-tab,
+.background-events-phone {
   display: none;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 800vw;
+  }
+
   .background-events {
     display: none;
   }
+
   .background-events-tab {
-    display: relative;
+    display: block;
+    position: relative;
     width: 100vw;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .background-events-tab {
     display: none;
   }
+
   .background-events-phone {
-    display: relative;
+    display: block;
+    position: relative;
     width: 100vw;
   }
 }
@@ -196,7 +206,7 @@ main img {
 
   100% {
     opacity: 0;
-    transform: translateX(70  %);
+    transform: translateX(70 %);
   }
 }
 
@@ -356,7 +366,7 @@ main img {
 .bg-expo {
   position: absolute;
   width: 100vw;
-  object-fit: cover; 
+  object-fit: cover;
   z-index: 0;
   margin-top: 15vw;
 }
@@ -369,10 +379,10 @@ main img {
 }
 
 .expo {
-    padding: 3rem 0;
-    color: white;
-    text-align: center;
-    z-index: 2;
+  padding: 3rem 0;
+  color: white;
+  text-align: center;
+  z-index: 2;
 }
 
 .expo h1 {
@@ -568,9 +578,9 @@ main img {
 
 @media (max-width: 1200px) {
   main {
-    padding-bottom: 400vh;
+    padding-bottom: 75vh;
   }
-  
+
   .event-pbp img {
     width: 50%;
     height: 100%;
@@ -631,10 +641,23 @@ main img {
   }
 }
 
+@media(max-width: 1000px) {
+  main {
+    padding-bottom: 90vh;
+  }
+}
+
+@media(max-width: 900px) {
+  main {
+    padding-bottom: 125vh;
+  }
+}
+
 @media (max-width: 768px) {
   main {
-    padding-bottom: 400vh;
+    padding-bottom: 150vw;
   }
+
   .algorena {
     display: none;
   }
@@ -730,12 +753,51 @@ main img {
     display: none;
     width: 100%;
     height: auto;
-    max-width: 100%;
+    max-width: 60vw;
+    max-height: 60vw;
     transition: opacity 0.5s ease-in-out;
   }
 
   .expo-card.active {
     display: block;
+  }
+
+  #card-1,
+  #card-2,
+  #card-3,
+  #card-4,
+  #card-5,
+  #card-6,
+  #card-7 {
+    width: 60vw;
+    height: 60vw;
+    max-width: 60vw;
+    max-height: 60vw;
+    transition: opacity 0.5s ease-in-out;
+    margin-left: 0;
+    opacity: 0;
+  }
+
+
+  #card-desc-1,
+  #card-desc-2,
+  #card-desc-3,
+  #card-desc-4,
+  #card-desc-5,
+  #card-desc-6,
+  #card-desc-7 {
+    width: 100%;
+    height: 100%;
+    transition: all 1s ease-in-out;
+  }
+
+  .expo-card-place-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem;
+    text-align: left;
+    gap: 0.2rem;
   }
 
   .expo-button-left,
@@ -749,30 +811,42 @@ main img {
     height: 1.5rem;
   }
 
-  .expo-card-place-desc h2{
-    font-size: 4.5vw;
+  .expo-card-place-desc h2 {
+    font-size: 4vw;
   }
 
-  .expo-card-place-desc p{
-    font-size: 3vw;
+  .expo-card-place-desc p {
+    font-size: 2.5vw;
   }
 }
 
-@media (max-width: 580px) {
+@media(max-width: 700px) {
   main {
-    padding-bottom: 390vh;
+    padding-bottom: 175vh;
+  }
+}
+
+@media(max-width: 600px) {
+  main {
+    padding-bottom: 250vw;
+  }
+}
+
+@media(max-width: 550px) {
+  main {
+    padding-bottom: 2vw;
   }
 }
 
 @media (max-width: 480px) {
   main {
-    padding-bottom: 850vw;
+    padding-bottom: 50vw;
   }
 
   .event-pbp {
     margin-top: 0rem;
   }
-  
+
   .event-pbp-content {
     width: 100%;
     padding: 1.2rem 1.2rem 2rem 1.2rem;
@@ -792,22 +866,52 @@ main img {
     font-size: 0.8rem;
     padding: 0.1rem;
   }
-}
 
-@media (max-width: 410px) {
-  main {
-    padding-bottom: 850vw;
+  .expo-card {
+    display: none;
+    width: 100%;
+    height: auto;
+    max-width: 60vw;
+    max-height: 60vw;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .expo-card.active {
+    display: block;
+  }
+
+  .expo-card-cont {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
   }
 }
 
-@media (max-width: 375px) {
+@media(max-width: 430px) {
   main {
-    padding-bottom: 925vw;
+    padding-bottom: 100vw;
   }
 }
 
-@media (max-width: 320px) {
+@media(max-width: 400px) {
   main {
-    padding-bottom: 925vw;
+    padding-bottom: 175vw;
+  }
+
+  .event-pbp-description h2 {
+    font-size: 2rem;
+  }
+}
+
+@media(max-width: 375px) {
+  main {
+    padding-bottom: 250vw;
+  }
+}
+
+@media(max-width: 350px) {
+  main {
+    padding-bottom: 300vw;
   }
 }
