@@ -48,6 +48,7 @@ body::-webkit-scrollbar-track {
 header {
   background-color: #0a1847;
   padding: 0.75rem;
+  z-index: 1000;
 }
 
 nav {
@@ -134,6 +135,11 @@ nav {
     margin-top: 200px;
     transition: margin-top 0.5s ease;
   }
+
+  .expo-card {
+      width: 20rem;
+      height: 30rem;
+  }
 }
 
 /* Footer */
@@ -145,6 +151,7 @@ nav {
   color: white;
   text-align: center;
   width: 100%;
+  z-index: 1000;
 }
 
 .footer-content {

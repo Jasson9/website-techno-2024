@@ -1,59 +1,126 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const mainContent = document.querySelector('main');
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const mainContent = document.querySelector("main");
 
-    menuToggle.addEventListener('click', function () {
-      navLinks.classList.toggle('active');
-      mainContent.classList.toggle('active');
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+        mainContent.classList.toggle("active");
     });
 });
 
 // PBP
 let places = [
     {
-        place: "KEMANGGISAN",
+        place: "ALAM SUTERA",
         details: [
             {
-                date: "Senin, 32 Agustus 2077",
-                location: "Zoom",
-                meetingShift: "A",
-                time: "09.61 - 11.99",
-            },
-            {
-                date: "Selasa, 33 Agustus 2077",
-                location: "Zoom",
-                meetingShift: "B",
-                time: "10.00 - 12.00",
-            },
-            {
-                date: "Rabu, 34 Agustus 2077",
-                location: "Zoom",
-                meetingShift: "C",
-                time: "11.00 - 13.00",
+                date: "Senin, 19 Agustus 2024",
+                location: "Binus @Alam Sutera",
+                Shift: "A",
+                time: "09.00 - 11.00",
             },
         ],
     },
     {
-        place: "SENAYAN",
+        place: "KEMANGGISAN",
         details: [
             {
-                date: "Kamis, 35 Agustus 2077",
-                location: "Campus",
-                meetingShift: "A",
-                time: "08.00 - 10.00",
-            },
-            {
-                date: "Jumat, 36 Agustus 2077",
-                location: "Campus",
-                meetingShift: "B",
+                date: "Senin, 19 Agustus 2024",
+                location: "Binus @Kemanggisan",
+                Shift: "A",
                 time: "09.00 - 11.00",
             },
             {
-                date: "Sabtu, 37 Agustus 2077",
-                location: "Campus",
-                meetingShift: "C",
-                time: "10.00 - 12.00",
+                date: "Selasa, 19 Agustus 2024",
+                location: "Binus @Kemanggisan",
+                Shift: "B",
+                time: "09.30 - 11.30",
+            },
+            {
+                date: "Rabu, 19 Agustus 2024",
+                location: "Binus @Kemanggisan",
+                Shift: "C",
+                time: "13.00 - 15.00",
+            },
+        ],
+    },
+    {
+        place: "SENAYAN (Full English)",
+        details: [
+            {
+                date: "Rabu, 21 Agustus 2024",
+                location: "Zoom Meeting",
+                Shift: "A",
+                time: "09.00 - 11.00",
+            },
+        ],
+    },
+    {
+        place: "BEKASI",
+        details: [
+            {
+                date: "Selasa, 20 Agustus 2024",
+                location: "Binus @Bekasi",
+                Shift: "A",
+                time: "09.00 - 11.00",
+            },
+            {
+                date: "Selasa, 20 Agustus 2024",
+                location: "Binus @Bekasi",
+                Shift: "B",
+                time: "13.00 - 15.00",
+            },
+        ],
+    },
+    {
+        place: "BANDUNG",
+        details: [
+            {
+                date: "Senin, 19 Agustus 2024",
+                location: "Binus @Bandung",
+                Shift: "A",
+                time: "09.00 - 11.00",
+            },
+            {
+                date: "Senin, 19 Agustus 2024",
+                location: "Binus @Bandung",
+                Shift: "B",
+                time: "13.00 - 15.00",
+            },
+        ],
+    },
+    {
+        place: "MALANG",
+        details: [
+            {
+                date: "Sabtu, 10 Agustus 2024",
+                location: "Binus @Malang",
+                Shift: "A",
+                time: "13.00 - 15.00",
+            },
+            {
+                date: "Sabtu, 10 Agustus 2024",
+                location: "Binus @Malang",
+                Shift: "B",
+                time: "13.00 - 15.00",
+            },
+        ],
+    },
+    {
+        place: "SEMARANG",
+        details: [
+            {
+                date: "Senin, 19 Agustus 2024",
+                location: "Binus @Semarang",
+                Shift: "A",
+                time: "11.00 - 13.00",
+            },
+            {
+                date: "Senin, 19 Agustus 2024",
+                location: "Binus @Semarang",
+                Shift: "B",
+                time: "11.00 - 13.00",
             },
         ],
     },
@@ -67,24 +134,22 @@ function updateCarousel() {
     const details = place.details[currentSlideIndex];
 
     document.getElementById("event-place").innerHTML = `
-        <h2>${place.place}</h2>
+        <h3>${place.place}</h3>
     `;
 
     document.getElementById("carousel-content").innerHTML = `
     <p>${details.date}</p>
     <p>Location : ${details.location}</p>
-    <p>MeetingShift : ${details.meetingShift}</p>
+    <p>Shift : ${details.Shift}</p>
     <p>Time : ${details.time}</p>
   `;
 }
 
 function prevSlide() {
-    if (currentPlaceIndex == 0 && currentSlideIndex == 0) {
-        currentPlaceIndex = 1;
+    if (currentSlideIndex == 0) {
+        currentPlaceIndex =
+            (currentPlaceIndex - 1 + places.length) % places.length;
         currentSlideIndex = places[currentPlaceIndex].details.length - 1;
-    } else if (currentSlideIndex == 0) {
-        currentSlideIndex = places[currentPlaceIndex].details.length - 1;
-        currentPlaceIndex--;
     } else {
         currentSlideIndex--;
     }
@@ -101,35 +166,16 @@ function prevSlide() {
         },
         { once: true },
     );
-
-    // currentSlideIndex =
-    //     currentSlideIndex > 0
-    //         ? currentSlideIndex - 1
-    //         : places[currentPlaceIndex].details.length - 1;
     updateCarousel();
 }
 
 function nextSlide() {
-    if (
-        currentPlaceIndex == 1 &&
-        currentSlideIndex == places[currentPlaceIndex].details.length - 1
-    ) {
-        currentPlaceIndex = 0;
+    if (currentSlideIndex == places[currentPlaceIndex].details.length - 1) {
         currentSlideIndex = 0;
-    } else if (
-        currentSlideIndex ==
-        places[currentPlaceIndex].details.length - 1
-    ) {
-        currentSlideIndex = 0;
-        currentPlaceIndex++;
+        currentPlaceIndex = (currentPlaceIndex + 1) % places.length;
     } else {
         currentSlideIndex++;
     }
-
-    // currentSlideIndex =
-    //     currentSlideIndex < places[currentPlaceIndex].details.length - 1
-    //         ? currentSlideIndex + 1
-    //         : 0;
 
     const carouselContent = document.getElementById("carousel-content");
     carouselContent.style.animation = "0.2s 1 pbpAnimation";
@@ -155,9 +201,15 @@ document.getElementById("click-right").addEventListener("click", function () {
     console.log(currCard);
     if (currCard < 7 && currCard > 2) {
         document.getElementById("click-left").style.visibility = "visible";
-        document.getElementById("click-right").style.visibility = "visible";
+
+        if (currCard === 6) {
+            document.getElementById("click-right").style.visibility = "hidden";
+        } else {
+            document.getElementById("click-right").style.visibility = "visible";
+        }
+
         document.getElementById(`card-${currCard}`).style.width = "30rem";
-        document.getElementById(`card-${currCard}`).style.height = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "35rem";
         document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
         document.getElementById(`card-${currCard - 1}`).style.height =
             "24.4rem";
@@ -177,11 +229,11 @@ document.getElementById("click-right").addEventListener("click", function () {
         document.getElementById(`card-desc-${currCard + 1}`).style.height =
             "100%";
         document.getElementById(`card-${currCard + 1}`).style.marginLeft = "0";
-    } else if (currCard == 7) {
+    } else if (currCard == 4) {
         document.getElementById("click-right").style.visibility = "hidden";
         document.getElementById("click-left").style.visibility = "visible";
         document.getElementById(`card-${currCard}`).style.width = "30rem";
-        document.getElementById(`card-${currCard}`).style.height = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "35rem";
         document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
         document.getElementById(`card-${currCard - 1}`).style.height =
             "24.4rem";
@@ -196,7 +248,7 @@ document.getElementById("click-right").addEventListener("click", function () {
         document.getElementById("click-left").style.visibility = "visible";
         document.getElementById("click-right").style.visibility = "visible";
         document.getElementById(`card-${currCard}`).style.width = "30rem";
-        document.getElementById(`card-${currCard}`).style.height = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "35rem";
         document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
         document.getElementById(`card-${currCard - 1}`).style.height =
             "24.4rem";
@@ -219,7 +271,7 @@ document.getElementById("click-left").addEventListener("click", function () {
         document.getElementById("click-right").style.visibility = "visible";
         document.getElementById("click-left").style.visibility = "visible";
         document.getElementById(`card-${currCard}`).style.width = "30rem";
-        document.getElementById(`card-${currCard}`).style.height = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "35rem";
         document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
         document.getElementById(`card-${currCard - 1}`).style.height =
             "24.4rem";
@@ -245,7 +297,7 @@ document.getElementById("click-left").addEventListener("click", function () {
         document.getElementById("click-right").style.visibility = "visible";
         document.getElementById("click-left").style.visibility = "hidden";
         document.getElementById(`card-${currCard}`).style.width = "30rem";
-        document.getElementById(`card-${currCard}`).style.height = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "35rem";
         document.getElementById(`card-${currCard + 1}`).style.width = "23.6rem";
         document.getElementById(`card-${currCard + 1}`).style.height =
             "24.4rem";
@@ -260,7 +312,7 @@ document.getElementById("click-left").addEventListener("click", function () {
         document.getElementById("click-right").style.visibility = "visible";
         document.getElementById("click-left").style.visibility = "visible";
         document.getElementById(`card-${currCard}`).style.width = "30rem";
-        document.getElementById(`card-${currCard}`).style.height = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "35rem";
         document.getElementById(`card-${currCard - 1}`).style.width = "23.6rem";
         document.getElementById(`card-${currCard - 1}`).style.height =
             "24.4rem";
@@ -285,19 +337,29 @@ document.getElementById("click-left").addEventListener("click", function () {
 });
 
 // Expo Carousel Logic for Smaller Screens
-let currentCardIndex = 0;
-const cards = document.querySelectorAll('.expo-card');
+let currentCardIndex = 1;
+const cards = document.querySelectorAll(".expo-card");
 const leftButton = document.getElementById("click-left");
 const rightButton = document.getElementById("click-right");
 
+function applyCardSize() {
+    if (window.innerWidth <= 480) {
+        document.getElementById(`card-${currCard - 1}`).style.width = "65vw";
+        document.getElementById(`card-${currCard - 1}`).style.height = "65vw";
+    } else {
+        document.getElementById(`card-${currCard}`).style.width = "30rem";
+        document.getElementById(`card-${currCard}`).style.height = "35rem";
+    }
+}
+
 function updateButtons() {
-    if (currentCardIndex === 0) {
+    if (currentCardIndex === 1) {
         leftButton.style.visibility = "hidden";
     } else {
         leftButton.style.visibility = "visible";
     }
 
-    if (currentCardIndex === cards.length - 1) {
+    if (currentCardIndex === cards.length - 2) {
         rightButton.style.visibility = "hidden";
     } else {
         rightButton.style.visibility = "visible";
@@ -307,16 +369,20 @@ function updateButtons() {
 function showCard(index) {
     cards.forEach((card, i) => {
         if (i === index) {
-            card.classList.add('active');
+            card.classList.add("active");
         } else {
-            card.classList.remove('active');
+            card.classList.remove("active");
         }
     });
+    applyCardSize(); // Call applyCardSize when showing a card
     updateButtons();
 }
 
 // Initial display of the first card and button visibility
 showCard(currentCardIndex);
+
+// Apply card size on window resize
+window.addEventListener("resize", applyCardSize);
 
 rightButton.addEventListener("click", function () {
     if (currentCardIndex < cards.length - 1) {
